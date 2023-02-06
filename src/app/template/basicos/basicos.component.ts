@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,8 +8,17 @@ import { NgForm } from '@angular/forms';
 })
 export class BasicosComponent {
 
+  @ViewChild('miFormulario') miFormulario!: NgForm;
+  
 
-  guardar(miFormulario: NgForm){
-    console.log(miFormulario);
+  constructor(){}
+
+  nombreValido():boolean{
+    return this.miFormulario?.controls['producto']?.invalid
+          && this.miFormulario?.controls['producto']?.touched;
+  }
+
+  guardar(){
+    console.log(this.miFormulario);
   }
 }

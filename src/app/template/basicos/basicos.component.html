@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col">
-        <form (ngSubmit)="guardar(miFormulario)" #miFormulario="ngForm">
+        <form (ngSubmit)="guardar()" #miFormulario="ngForm">
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Productos</label>
                 <div class="col-sm-9">
@@ -16,8 +16,7 @@
                             minlength="3">
 
                     <span class="form-text text-danger" 
-                          *ngIf="miFormulario.invalid &&
-                          miFormulario.touched"> 
+                          *ngIf="nombreValido()"> 
                           Debe de ser de 3 letras
                     </span>
                 </div>
