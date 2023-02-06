@@ -10,6 +10,6 @@ export class BasicosComponent {
 
 
   guardar(miFormulario: NgForm){
-    console.log(miFormulario.value);
+    console.log(miFormulario);
   }
 }
