@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dinamicos',
@@ -9,8 +9,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class DinamicosComponent {
 
   miFormulario: FormGroup = this.fb.group({
-    nombre: ['',[Validators.required, Validators.minLength(3)]]
-  })
+    nombre: ['',[Validators.required, Validators.minLength(3)]],
+    favoritos: this.fb.array([
+      ['Metal Geard',Validators.required ],
+      ['Death Stranding',Validators.required ],
+    ], Validators.required)
+  });
+
+
+  
+  get favoritosArr(){
+    return this.miFormulario.get('favoritos') as FormArray;
+  }
+  
 
   constructor(private fb: FormBuilder){}  
 
@@ -18,10 +29,11 @@ export class DinamicosComponent {
   campoNoEsValido( campo: string ){
     return this.miFormulario.controls[campo].errors
     && this.miFormulario.controls[campo].touched;
+    
   }
 
   guardar(){
-    
+
     if (this.miFormulario.invalid){
       this.miFormulario.markAllAsTouched();
       return;
