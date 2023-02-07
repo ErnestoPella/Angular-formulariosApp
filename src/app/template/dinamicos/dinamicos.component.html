@@ -22,9 +22,13 @@
         <div class="col-sm-9">
             <div class="input-group">
                 <input class="form-control"
-                    placeholder="Nombre de la persona">  
+                    placeholder="Nombre de la persona"
+                    [(ngModel)]="nuevoJuego"
+                    name="nuevoJuego">  
+
                 <button class="btn btn-outline-primary"
-                        type="button">
+                        type="button"
+                        (click)="agregarJuego()">
                     Agregar    
                 </button>
             </div>
