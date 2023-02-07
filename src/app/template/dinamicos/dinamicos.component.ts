@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-dinamicos',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class DinamicosComponent {
 
+  @ViewChild('dinamicForm') dinamicForm!: NgForm;
+
+
+  nombreValido():boolean{
+    return this.dinamicForm?.controls['nombre']?.invalid;       
+  }
+
+  guardar(){
+
+  }
 }
