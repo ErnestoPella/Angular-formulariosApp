@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-basicos',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./basicos.component.css']
 })
 export class BasicosComponent {
+
+  miFormulario: FormGroup = new FormGroup({
+    'nombre': new FormControl('RTX 4080ti')
+  });
+
+  constructor(){}
 
 }
