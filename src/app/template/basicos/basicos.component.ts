@@ -25,5 +25,9 @@ export class BasicosComponent {
 
   guardar(){
     console.log(this.miFormulario);
+    this.miFormulario.resetForm({
+      precio: 0,
+      existencias:0
+    });
   }
 }
