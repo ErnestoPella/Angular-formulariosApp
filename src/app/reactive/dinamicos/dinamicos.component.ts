@@ -52,4 +52,9 @@ export class DinamicosComponent {
     this.favoritosArr.push(this.fb.control(this.nuevoFavorito.value, Validators.required));
     this.nuevoFavorito.reset();
   }
+
+  borrar(index: number){
+    
+    this.favoritosArr.removeAt(index);
+  }
 }
