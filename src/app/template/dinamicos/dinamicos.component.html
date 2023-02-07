@@ -7,7 +7,7 @@
         <div class="col-sm-9">
             <input class="form-control"
                     placeholder="Nombre de la persona"
-                    ngModel
+                    [ngModel]="persona.nombre"
                     name="nombre"
                     required>  
             <span class="form-text text-danger"
@@ -34,10 +34,11 @@
 
     <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Favoritos</label>
-        <div class="col-sm-9">
-            <input class="form-control"
-                    placeholder="Nombre de la persona"
-            >   
+        <div class="col-sm-9" >
+            <input *ngFor="let item of persona.favoritos; let i = index" 
+                    class="form-control mb-1"
+                    [(ngModel)]="item.nombre"
+                    name="item_{{ i }}">   
         </div>
     </div>
 
@@ -52,3 +53,7 @@
         </div>
     </div>
 </form>
+
+
+<span>Persona</span>
+<pre>{{persona | json}}</pre>
