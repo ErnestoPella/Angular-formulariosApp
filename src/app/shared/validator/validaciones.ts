@@ -14,4 +14,4 @@ export const noPuedeSerStrider = (control: FormControl) =>{
     }
 
     return null;
-  }
+}

@@ -41,9 +41,9 @@
                         class="form-control"
                         formControlName="username"
                         placeholder="Username del usuario">
-                        <span class="form-text text-danger"
-                    *ngIf="campoNoValido('username')">
-                            El username no puede ser strider
+                    <span class="form-text text-danger"
+                            *ngIf="campoNoValido('username')">
+                                El username no puede ser strider
                     </span>
                 </div>   
             </div>
@@ -53,8 +53,12 @@
                 <div class="col-sm-9">
                     <input type="password"
                         class="form-control"
+                        formControlName="password"
                         placeholder="Password de su cuenta">
-                    
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoValido('password')">
+                              El password debe ser mayor de 6 caracteres
+                    </span>
                 </div>   
             </div>
 
@@ -63,8 +67,12 @@
                 <div class="col-sm-9">
                     <input type="password"
                         class="form-control"
+                        formControlName="password2"
                         placeholder="Confirmar el password">
-                    
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoValido('password2')">
+                            Las passwords deben ser iguales
+                    </span>
                 </div>   
             </div>
 
@@ -82,6 +90,8 @@
 
 
 <h2>From Valid: {{miFormulario.valid}}</h2>
+<h2>From Errors</h2>
+<pre>{{miFormulario.errors | json}}</pre>
 
 <h5>Nombre</h5>
 <pre>{{miFormulario.controls['nombre'].errors | json}}</pre>
@@ -91,3 +101,9 @@
 
 <h5>Username</h5>
 <pre>{{miFormulario.controls['username'].errors | json}}</pre>
+
+<h5>Password</h5>
+<pre>{{miFormulario.controls['password'].errors | json}}</pre>
+
+<h5>Confirmar</h5>
+<pre>{{miFormulario.controls['password2'].errors | json}}</pre>
