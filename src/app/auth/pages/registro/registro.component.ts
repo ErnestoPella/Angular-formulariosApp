@@ -22,6 +22,20 @@ export class RegistroComponent implements OnInit{
     validators: [this.validatorsService.camposIguales('password','password2')]
   })
 
+  get emailErrorMsg(): string {
+    
+    const errors = this.miFormulario.get('email')?.errors;
+    if (errors?.['required']) {
+      return 'Email es obligatiorio';
+    }else if(errors?.['pattern']){
+      return 'El formato no es permitido'
+    }
+
+    return 'El email ya existe';
+
+  }
+
+
 
   constructor(private fb: FormBuilder,
               private validatorsService: ValidatorService,
@@ -41,10 +55,14 @@ export class RegistroComponent implements OnInit{
     return this.miFormulario.get(campo)?.invalid
             && this.miFormulario.get(campo)?.touched;
   }
+  
+
 
 
   submitFormulario(){
 
     this.miFormulario.markAllAsTouched();
   }
+
+  
 }

@@ -29,8 +29,8 @@
                         placeholder="Email del usuario">
                     <span class="form-text text-danger"
                         *ngIf="campoNoValido('email')">
-                            El correo es obligatorio
-                    </span>
+                            {{emailErrorMsg}}
+                  </span>
                 </div>   
             </div>
 
