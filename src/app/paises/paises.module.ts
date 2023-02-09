@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SelectorPageComponent } from './pages/selector-page/selector-page.component';
 import { ReactiveRoutingModule } from '../reactive/reactive-routing.module';
 import { PaisesRoutingModule } from './paises-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { PaisesRoutingModule } from './paises-routing.module';
   ],
   imports: [
     CommonModule,
-    PaisesRoutingModule
+    PaisesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class PaisesModule { }
