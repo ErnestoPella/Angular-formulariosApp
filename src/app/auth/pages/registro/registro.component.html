@@ -81,6 +81,7 @@
                 <div class="col">
                     <button class="btn btn-primary float-end" 
                             type="submit"
+                            [disabled]="miFormulario.invalid"
                             [disabled]="miFormulario.pending">
                         Crear
                     </button>

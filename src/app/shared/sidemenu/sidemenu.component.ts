@@ -55,4 +55,11 @@ export class SidemenuComponent {
       ruta: './auth/registro'
     }
   ]
+
+  paisMenu: MenuItem[] =[
+    {
+      texto: 'Pais',
+      ruta:'./paises/selector'
+    }
+  ]
 }
